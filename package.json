@@ -1,0 +1,57 @@
+{
+  "name": "tiny-package-starter",
+  "version": "1.0.0",
+  "description": "Tiny npm package starter kit",
+  "keywords": [
+    "es2015",
+    "es5",
+    "es6",
+    "node",
+    "npm",
+    "package",
+    "starter"
+  ],
+  "bugs": {
+    "url": "https://github.com/gabmontes/tiny-package-starter/issues"
+  },
+  "license": "WTFPL",
+  "author": "Gabriel Montes <gabriel@utoctadel.com.ar>",
+  "files": [
+    "bin",
+    "dist",
+    "lib"
+  ],
+  "main": "dist/index.js",
+  "bin": {
+    "tiny-command": "bin/command.js"
+  },
+  "repository": "gabmontes/tiny-package-starter",
+  "scripts": {
+    "lint": "npm run lint:lib && npm run lint:cli",
+    "lint:cli": "eslint cli",
+    "lint:lib": "eslint lib",
+    "test": "mocha --compilers js:babel-register",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test",
+    "build": "npm run build:lib && npm run build:cli",
+    "build:cli": "babel --presets latest -d cli/ bin/",
+    "build:lib": "babel --presets latest -d dist/ lib/",
+    "build:runtime": "babel --presets latest --plugins transform-runtime -d dist/ lib/",
+    "prepublish": "npm run lint && npm test && npm run build"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0",
+    "babel-runtime": "^6.11.6",
+    "core-js": "^2.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-latest-minimal": "^1.1.2",
+    "babel-register": "^6.16.3",
+    "chai": "^3.5.0",
+    "eslint": "^3.8.1",
+    "mocha": "^3.1.2",
+    "nyc": "^8.3.1"
+  }
+}
