@@ -33,7 +33,7 @@
     "test": "mocha --compilers js:babel-register",
     "coverage": "nyc --reporter=lcov --reporter=text npm test",
     "build": "npm run build:lib && npm run build:cli",
-    "build:cli": "babel --presets latest -d cli/ bin/",
+    "build:cli": "babel --presets latest -d bin/ cli/",
     "build:lib": "babel --presets latest -d dist/ lib/",
     "build:runtime": "babel --presets latest --plugins transform-runtime -d dist/ lib/",
     "prepublish": "npm run lint && npm test && npm run build"
