@@ -1,6 +1,6 @@
 {
   "name": "tiny-package-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny npm package starter kit",
   "keywords": [
     "es2015",
